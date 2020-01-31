@@ -22,3 +22,9 @@ Du kommer även under arbetets gång få miniföreläsningar om hur du kan göra
 - Standup meetings i början på varje lektion
 - Commits under lektion och push i slutet
 - Eleven lägger inlägg i utvecklingsdagboken (git-wikin) det sista som händer
+
+## Projekt beskrivning
+- Webshop med kläder
+- 4 huvudsidor: Hem, registering, produktsida, checkout
+- User med registering och login: Lösenord och användarnamn
+- Produkter med attributen namn, kostnad och hur många som finns i lager
