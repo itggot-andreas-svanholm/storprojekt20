@@ -1,8 +1,6 @@
 # Storprojekt20
 Storprojekt 2020 Webbserverprogrammering.
 
-![Sun](sun.png)
-
 ##  Uppgiftsbeskrivning
 
 Nu är det dags för att bygga en större applikation med hjälp av de tekniker vi har lärt oss i kursen Webbserverprogrammering. Syftet är att du ska lära dig att använda dina kunskaper för att bygga en webbapplikation med både front-end och back-end. Att ha kunskaper inom back-end-utveckling ger dig stora fördelar i livet om du tex ska bygga applikationer som sparar data och har användare med konton. Skulle du fortsätta med front-end (bara webbdesign) är det också väldigt meriterande att ha viss förståelse för vad som händer back-end. Både när du utvecklar själv men även när du kommunicerar med andra utvecklare.
@@ -22,9 +20,3 @@ Du kommer även under arbetets gång få miniföreläsningar om hur du kan göra
 - Standup meetings i början på varje lektion
 - Commits under lektion och push i slutet
 - Eleven lägger inlägg i utvecklingsdagboken (git-wikin) det sista som händer
-
-## Projekt beskrivning
-- Webshop med kläder
-- 4 huvudsidor: Hem, registering, produktsida, checkout
-- User med registering och login: Lösenord och användarnamn
-- Produkter med attributen namn, kostnad och hur många som finns i lager
