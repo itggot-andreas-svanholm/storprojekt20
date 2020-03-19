@@ -17,4 +17,9 @@ post('/add_to_cart') do
     db = SQLite3::Database.new("db/webshop.db")
     db.results_as_hash = true
     add = db.execute("SELECT Varor.id FROM ")
+    redirect('/outlet')
+end
+
+get('/checkout') do
+    slim(:checkout)
 end
