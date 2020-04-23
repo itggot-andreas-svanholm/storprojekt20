@@ -1,0 +1,18 @@
+h2 Visa alla notes
+
+a href="/notes/new" Skapa ny
+
+- if session["notes"]
+    ul
+        - session["notes"].each do |note|
+            li
+                h3 = note[0]
+                p = note[1]
+            h4 Skrivet av användare: #{session["user"]}
+- else
+    p  
+      | Det finns inga notes ännu. 
+
+h2 = "Ta bort alla notes"
+form action="/notes_delete" method="post"
+    input type="submit" value="Ta bort"

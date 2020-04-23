@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 html lang="en"
-    head
-        meta charset="UTF-8"/
-        meta name="viewport" content="width=device-width, initial-scale=1.0"/
-        meta http-equiv="X-UA-Compatible" content="ie=edge"/
-        link rel="stylesheet" href="css/style.css"/
-        title Document
-    body
-        ==yield
+head
+    meta charset="UTF-8"/
+    meta name="viewport" content="width=device-width, initial-scale=1.0"/
+    meta http-equiv="X-UA-Compatible" content="ie=edge"/
+    link rel="stylesheet" href="css/style.css"/
+    title Document
+body
+nav
+    a href="/" Start
+    a href="/notes" Visa alla
+    a href="/notes/new" Skapa ny note
+    a href="/documentation" Dokumentation?!?!
+- if session["user"] != nil
+    h2 Inloggad som #{session["user"]} med lösenord #{session["password"]}
+- else
+    h2 Inte inloggad
+main
+    ==yield
+            

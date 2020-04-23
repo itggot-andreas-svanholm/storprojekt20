@@ -1,0 +1,11 @@
+- if session["user"]
+    h2 SKapa ny note
+
+    form action="/notes/create" method="post"
+        input type="text" name="rubrik" placeholder="Rubrik"
+        input type="text" name="ny_note" placeholder="Skriv din note"
+        input type="submit" value="Skapa"/
+- else 
+    h2 Logga in här:
+    form action="/login" method="get"
+        input type="submit" value="Logga in"/

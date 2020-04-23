@@ -1,25 +1,61 @@
 require 'sinatra'
 require 'slim'
-require 'BCrypt'
-require 'SQLite3'
 
 enable :sessions
 
-get('/') do
+get("/") do
     slim(:index)
 end
 
-get('/outlet') do
-    slim(:outlet)
+post("/logindone") do
+    if params["newuser"] != nil
+        session["user"] = params["newuser"]
+        session["password"] = params["newpassword"]
+        redirect("/")
+    end
+    redirect("/")
 end
 
-post('/add_to_cart') do
-    db = SQLite3::Database.new("db/webshop.db")
-    db.results_as_hash = true
-    add = db.execute("SELECT Varor.id FROM ")
-    redirect('/outlet')
+post("/currentuser") do
+    if session["password"] != params["realpassword"]
+        redirect("/error")
+    end
+    session.delete("user")
+    session["user"] = params["newuser"]
+    redirect("/")
 end
 
-get('/checkout') do
-    slim(:checkout)
+get("/login") do
+    slim(:login)
+end
+
+get("/error") do
+    slim(:"errors/pw")
+end
+
+get('/notes') do
+    slim(:"notes/show")
+end
+
+get('/notes/new') do
+    slim(:"notes/new")
+end
+
+post('/notes/create') do
+    if session["notes"] == nil
+        session["notes"] = []
+        session["notes"] << [params["rubrik"],params["ny_note"]]
+    else
+      session["notes"] << [params["rubrik"],params["ny_note"]]
+    end
+    redirect('/notes')
+end
+
+post("/notes_delete") do
+    session["notes"] = []
+    redirect("/notes")
+end
+
+get("/documentation") do
+    slim(:documentation)
 end

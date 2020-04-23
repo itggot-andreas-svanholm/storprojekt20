@@ -1,6 +1,12 @@
-h1 Välkommen till shop
-
-form action="/outlet" method="get"
-    input# type="text" name="title" placeholder="Tjena"/
-    input# type="text" name="title" placeholder="knas"/
-    input type="submit" value="Logga in"
+- if session["user"] != nil
+    h3 Skriv ditt nya namn
+    form action="/currentuser" method="post"
+        input type="text" name="newuser" placeholder="Nya namn här"
+        input type="text" name="realpassword" placeholder="Skriv ditt lösenord"
+        input type="submit" value="Ändra"/
+- else
+    h1 Logga in tack
+    form action="/login" method="get"
+        input type="submit" value="Logga in"/
+    
+end
